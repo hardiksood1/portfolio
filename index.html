@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardik Sood - Data Analyst Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #161b22;
+        }
+
+        header .intro {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0 0;
+            color: #8b949e;
+        }
+
+        .profile-image {
+            border: 4px solid #58a6ff;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #58a6ff;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: 2px solid #58a6ff;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #58a6ff;
+            color: #0d1117;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #58a6ff;
+        }
+
+        .skills, .projects, .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skills .skill, .projects .project, .contact .info {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.33% - 40px);
+            box-sizing: border-box;
+            color: #c9d1d9;
+        }
+
+        .projects .project a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .projects .project a:hover {
+            color: #c9d1d9;
+        }
+
+        footer {
+            background-color: #161b22;
+            padding: 20px;
+            text-align: center;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="intro">
+            <h1>Hardik Sood</h1>
+            <p>Data Analyst | MSc in Data Science</p>
+        </div>
+        <div class="profile-image">
+            <img src="C:\Users\soodh\Downloads\Telegram Desktop\photo_2024-11-16_14-59-12.jpg" alt="Hardik Sood">
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            I am a Data Analyst passionate about extracting insights from complex datasets. 
+            I hold a Master's in Data Science and am constantly refining my skills in 
+            machine learning, data visualization, and statistical analysis.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Data Visualization</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">AI Solutions</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <strong>Diabetic Patients Prediction</strong>
+                <p><a href="https://github.com/hardiksood1/diabetic-patients-prediction" target="_blank">GitHub Link</a></p>
+            </div>
+            <div class="project">
+                <strong>Market Basket Analysis</strong>
+                <p><a href="https://github.com/hardiksood1/market-basket-analysis" target="_blank">GitHub Link</a></p>
+            </div>
+            <div class="project">
+                <strong>Air Quality Index Dashboard</strong>
+                <p><a href="https://github.com/hardiksood1/Power-Bi-air-quality-index" target="_blank">GitHub Link</a></p>
+            </div>
+            <div class="project">
+                <strong>Sales Prediction Project</strong>
+                <p><a href="https://github.com/hardiksood1/sales-prediction-project" target="_blank">GitHub Link</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="contact">
+            <div class="info">Email: <a href="mailto:hardiksood8@gmail.com">hardiksood8@gmail.com</a></div>
+            <div class="info">Phone: 6377279565</div>
+            <div class="info">
+                GitHub: <a href="https://github.com/hardiksood1" target="_blank">github.com/hardiksood1</a>
+            </div>
+            <div class="info">
+                LinkedIn: <a href="http://www.linkedin.com/in/hardik-sood-0a8a14229" target="_blank">linkedin.com/in/hardik-sood</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Hardik Sood
+    </footer>
+</body>
+</html>
