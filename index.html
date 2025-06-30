@@ -1,179 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hardik Sood - AI Engineer Portfolio</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0d1117;
-      color: #c9d1d9;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background-color: #161b22;
-    }
-    header .intro {
-      display: flex;
-      flex-direction: column;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2em;
-      margin: 5px 0 0;
-      color: #8b949e;
-    }
-    .profile-image {
-      border: 4px solid #58a6ff;
-      border-radius: 50%;
-      overflow: hidden;
-      width: 150px;
-      height: 150px;
-    }
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    nav {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #58a6ff;
-      font-size: 1em;
-      padding: 10px 20px;
-      border: 2px solid #58a6ff;
-      border-radius: 30px;
-      transition: 0.3s ease;
-    }
-    nav a:hover {
-      background-color: #58a6ff;
-      color: #0d1117;
-    }
-    .section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #58a6ff;
-    }
-    .skills, .projects, .contact, .certifications, .experience {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .skill, .project, .info, .certification, .job {
-      background: #161b22;
-      padding: 20px;
-      border-radius: 10px;
-      width: calc(33.33% - 40px);
-      box-sizing: border-box;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .skill:hover, .project:hover {
-      transform: scale(1.03);
-    }
-    footer {
-      background-color: #161b22;
-      padding: 20px;
-      text-align: center;
-      color: #8b949e;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-    .modal-content {
-      background-color: #161b22;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #58a6ff;
-      width: 90%;
-      max-width: 800px;
-      border-radius: 10px;
-      color: #c9d1d9;
-      text-align: left;
-    }
-    .close {
-      color: #58a6ff;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .project-img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-    .resume-download {
-      margin-top: 20px;
-    }
-    .resume-download a {
-      color: #58a6ff;
-      text-decoration: underline;
-    }
-    @media screen and (max-width: 768px) {
-      .skill, .project, .info, .certification, .job {
-        width: 90%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardik Sood | Data Science & AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="intro">
-      <h1>Hardik Sood</h1>
-      <p>AI Engineer | ML Developer | Data Scientist</p>
-    </div>
-    <div class="profile-image">
-      <img src="https://github.com/hardiksood1/portfolio/raw/main/profilephoto.jpg" alt="Hardik Sood">
-    </div>
-  </header>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Hardik Sood</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="profilephoto.jpg" alt="Hardik Sood" class="profile-img">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Hardik Sood</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Data Science & AI Engineer</h2>
+                    <p class="hero-description">
+                        MSc Data Science graduate with expertise in Machine Learning, Deep Learning, 
+                        Computer Vision, and Large Language Models. Passionate about building 
+                        intelligent systems that solve real-world problems.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="assets/Hardik_Sood_Resume_Updated.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/hardiksood1" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/hardiksood1" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:hardiksood8@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+916377279565" aria-label="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      MSc Data Science graduate with hands-on expertise in deploying AI applications in real-world domains such as healthcare, agriculture, surveillance, and e-commerce. Skilled in Python, PyTorch, TensorFlow, OpenCV, and cloud services like AWS & GCP. Built and deployed scalable solutions involving OCR, face recognition, product intelligence, and real-time tracking. Strong in LLM fine-tuning, MLOps with Docker & Triton, and cloud automation.
-    </p>
-    <div class="resume-download">
-      <a href="https://github.com/hardiksood1/portfolio/raw/main/Hardik%20Sood%20resume.pdf" target="_blank">📄 Download Resume</a>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        MSc Data Science graduate with strong foundations in <strong>machine learning, 
+                        deep learning, computer vision, and large language models</strong>. Skilled in 
+                        Python, PyTorch, and SQL with experience in deploying intelligent systems for 
+                        real-time object detection, document summarization, and e-commerce automation.
+                    </p>
+                    <p class="about-description">
+                        I'm passionate about leveraging cutting-edge AI technologies to solve complex 
+                        real-world problems across healthcare, agriculture, surveillance, and e-commerce 
+                        domains. My experience spans from research to production deployment, with a focus 
+                        on scalable and efficient solutions.
+                    </p>
+                    
+                    <div class="education">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <h4>MSc Data Science</h4>
+                            <p>Chandigarh University • 2023-2025</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>BCA (Bachelor of Computer Applications)</h4>
+                            <p>Maharaja Ganga Singh University • 2019-2022 • GPA: 7.12</p>
+                        </div>
+                    </div>
 
-  <!-- Other sections remain unchanged -->
+                    <div class="achievements">
+                        <h3>Achievements</h3>
+                        <ul>
+                            <li>🏆 Finalist in University Ideathon Challenge</li>
+                            <li>🥈 2nd Place in Technical Presentation at Chandigarh University</li>
+                        </ul>
+                    </div>
+
+                    <div class="certifications">
+                        <h3>Certifications</h3>
+                        <ul>
+                            <li>Google Data Analytics Professional Certificate</li>
+                            <li>NLP on Google Cloud</li>
+                            <li>Tata Data Visualization</li>
+                            <li>Accenture NA Data Analytics and Visualization</li>
+                            <li>Python & Java Fundamentals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>ML/DL Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">TensorRT</span>
+                        <span class="skill-tag">ONNX</span>
+                        <span class="skill-tag">PaddleOCR</span>
+                        <span class="skill-tag">OpenCV</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Visualization & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Plotly</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Hive</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Development Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Gradio</span>
+                        <span class="skill-tag">FFmpeg</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & MLOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Triton</span>
+                        <span class="skill-tag">CUDA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="chatbot.png" alt="Product Image Intelligence">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Product Image Intelligence</h3>
+                        <p>Built a Gradio-based multimodal AI app using DeepSeek Janus-Pro-7B to analyze product images and auto-generate titles, brands, descriptions, and features with CUDA acceleration on Tesla V100.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Gradio</span>
+                            <span class="tech-tag">Janus-Pro-7B</span>
+                            <span class="tech-tag">CUDA</span>
+                            <span class="tech-tag">Tesla V100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="image to text.jpg" alt="Medical OCR & Summarization">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Medical OCR & Summarization</h3>
+                        <p>Intelligent system that extracts text from medical PDFs/images and generates comprehensive summaries using NVIDIA Gemma with Hindi numeral conversion capabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NVIDIA Gemma</span>
+                            <span class="tech-tag">PaddleOCR</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Medical AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="peson detection.jfif" alt="Person Detection & Face Recognition">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Real-Time Person Detection & Face Recognition</h3>
+                        <p>Advanced surveillance system using YOLOv8 + DeepSORT + Face Recognition with automated WhatsApp alerts and real-time RTSP streaming in Docker containers.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">DeepSORT</span>
+                            <span class="tech-tag">Face Recognition</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="speed estimation.png" alt="Vehicle Speed Estimation">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Vehicle Detection & Speed Estimation</h3>
+                        <p>Real-time traffic monitoring system with YOLOv8 + PaddleOCR for vehicle detection, license plate recognition, and speed calculation with RTSP streaming and CSV logging.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">PaddleOCR</span>
+                            <span class="tech-tag">RTSP</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>News Classification Pipeline</h3>
+                        <p>High-performance ML pipeline: RoBERTa → ONNX → TensorRT → Triton deployment achieving 92.3% accuracy with ~5ms inference latency for real-time news categorization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">RoBERTa</span>
+                            <span class="tech-tag">ONNX</span>
+                            <span class="tech-tag">TensorRT</span>
+                            <span class="tech-tag">Triton</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>LLM-based Yield Prediction</h3>
+                        <p>Fine-tuned OpenLLaMA-7B using LoRA for agricultural yield prediction with prompt-style templates and 4-bit quantization for efficient training and inference.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenLLaMA</span>
+                            <span class="tech-tag">LoRA</span>
+                            <span class="tech-tag">Agriculture</span>
+                            <span class="tech-tag">Fine-tuning</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Apprentice</h3>
+                        <h4>CCS Computer Private Limited</h4>
+                        <p>Supported enterprise software deployment and assisted with technical troubleshooting. Helped integrate data solutions and supported internal systems under senior supervision.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Oct 2024 - Nov 2024</div>
+                    <div class="timeline-content">
+                        <h3>Data Analyst Intern</h3>
+                        <h4>Vodafone Idea Foundation</h4>
+                        <p>Analyzed agriculture datasets and built insights that improved client efficiency by 15%. Explored the use of LLMs in generating case study reports from structured data.</p>
+                        <div class="achievement">
+                            <i class="fas fa-chart-line"></i>
+                            <span>15% efficiency improvement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun 2024 - Jul 2024</div>
+                    <div class="timeline-content">
+                        <h3>Data Science Intern</h3>
+                        <h4>Code Alpha</h4>
+                        <p>Built and deployed predictive models achieving over 92% accuracy for customer behavior insights and business intelligence solutions.</p>
+                        <div class="achievement">
+                            <i class="fas fa-target"></i>
+                            <span>92%+ model accuracy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Apr 2024 - May 2024</div>
+                    <div class="timeline-content">
+                        <h3>Data Science Intern</h3>
+                        <h4>Cognifyz Technologies</h4>
+                        <p>Delivered data-driven restaurant analytics and forecasting models that reduced operational costs by 18% through predictive insights.</p>
+                        <div class="achievement">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>18% cost reduction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing new opportunities, collaborations, or just having a chat about data science and AI!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hardiksood8@gmail.com">hardiksood8@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+916377279565">+91 6377279565</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/hardiksood1" target="_blank">GitHub</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://linkedin.com/in/hardiksood1" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Hardik Sood. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="main.js"></script>
 </body>
 </html>
