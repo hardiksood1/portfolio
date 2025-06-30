@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardik Sood - Data Analyst Portfolio</title>
+    <title>Hardik Sood - AI Engineer Portfolio</title>
     <style>
-        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -98,7 +97,12 @@
             border-radius: 10px;
             width: calc(33.33% - 40px);
             box-sizing: border-box;
-            color: #c9d1d9;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .skills .skill:hover, .projects .project:hover {
+            transform: scale(1.03);
         }
 
         .projects .project a {
@@ -116,16 +120,60 @@
             text-align: center;
             color: #8b949e;
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: #161b22;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #58a6ff;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            color: #c9d1d9;
+            text-align: left;
+        }
+
+        .close {
+            color: #58a6ff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .skills .skill, .projects .project, .contact .info {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="intro">
             <h1>Hardik Sood</h1>
-            <p>Data Analyst | MSc in Data Science</p>
+            <p>AI Engineer | ML Developer | Data Scientist</p>
         </div>
         <div class="profile-image">
-            <img src="photo_2024-11-16_14-59-12.jpg" alt="Hardik Sood">
+            <img src="profile.jpg" alt="Hardik Sood">
         </div>
     </header>
 
@@ -133,71 +181,10 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I am a Data Analyst passionate about extracting insights from complex datasets. 
-            I hold a Master's in Data Science and am constantly refining my skills in 
-            machine learning, data visualization, and statistical analysis.
-        </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="skills">
-            <div class="skill">Python</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Data Visualization</div>
-            <div class="skill">Machine Learning</div>
-            <div class="skill">AI Solutions</div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <strong>Diabetic Patients Prediction</strong>
-                <p><a href="https://github.com/hardiksood1/diabetic-patients-prediction" target="_blank">GitHub Link</a></p>
-            </div>
-            <div class="project">
-                <strong>Market Basket Analysis</strong>
-                <p><a href="https://github.com/hardiksood1/market-basket-analysis" target="_blank">GitHub Link</a></p>
-            </div>
-            <div class="project">
-                <strong>Air Quality Index Dashboard</strong>
-                <p><a href="https://github.com/hardiksood1/Power-Bi-air-quality-index" target="_blank">GitHub Link</a></p>
-            </div>
-            <div class="project">
-                <strong>Sales Prediction Project</strong>
-                <p><a href="https://github.com/hardiksood1/sales-prediction-project" target="_blank">GitHub Link</a></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <div class="contact">
-            <div class="info">Email: <a href="mailto:hardiksood8@gmail.com">hardiksood8@gmail.com</a></div>
-            <div class="info">Phone: 6377279565</div>
-            <div class="info">
-                GitHub: <a href="https://github.com/hardiksood1" target="_blank">github.com/hardiksood1</a>
-            </div>
-            <div class="info">
-                LinkedIn: <a href="http://www.linkedin.com/in/hardik-sood-0a8a14229" target="_blank">linkedin.com/in/hardik-sood</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2024 Hardik Sood
-    </footer>
+    <!-- Sections will continue here (about, skills, projects, experience, contact, modals, footer, JS) -->
 </body>
 </html>
