@@ -1,68 +1,162 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('.nav-menu a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    // Only handle anchor links
-    if (this.hash) {
-      e.preventDefault();
-      const target = document.querySelector(this.hash);
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 60, // Adjust if navbar is fixed
-          behavior: 'smooth'
-        });
-      }
-    }
-  });
-});
-
-// Active menu highlighting on scroll
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-menu a');
-
-window.addEventListener('scroll', () => {
-  let scrollPos = window.scrollY + 80; // Adjust offset for fixed navbar
-  sections.forEach(section => {
-    if (
-      scrollPos >= section.offsetTop &&
-      scrollPos < section.offsetTop + section.offsetHeight
-    ) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.hash === `#${section.id}`) {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-});
-
-// Optional: Typing effect for subtitle (if you want it animated)
-function typeWriter(element, text, speed = 60) {
-  let i = 0;
-  element.textContent = '';
-  function typing() {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
-      setTimeout(typing, speed);
-    }
-  }
-  typing();
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0d1117;
+  color: #c9d1d9;
 }
 
-// Example usage for subtitle
-document.addEventListener('DOMContentLoaded', () => {
-  const subtitle = document.querySelector('.subtitle-typing');
-  if (subtitle) {
-    typeWriter(subtitle, subtitle.dataset.text || subtitle.textContent);
-  }
-});
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #161b22;
+}
 
-// Optional: Mobile menu toggle (if you add a hamburger menu)
-const navToggle = document.querySelector('.nav-toggle');
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    document.querySelector('.nav-menu').classList.toggle('open');
-    navToggle.classList.toggle('open');
-  });
+header .intro {
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  margin: 5px 0 0;
+  color: #8b949e;
+}
+
+.profile-image {
+  border: 4px solid #58a6ff;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #58a6ff;
+  font-size: 1em;
+  padding: 10px 20px;
+  border: 2px solid #58a6ff;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #58a6ff;
+  color: #0d1117;
+}
+
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #58a6ff;
+}
+
+.skills, .projects, .experience, .certifications {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill, .project, .certification, .job {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(33.33% - 40px);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover, .project:hover {
+  transform: scale(1.03);
+}
+
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.resume-download {
+  margin-top: 20px;
+}
+
+.resume-download a {
+  color: #58a6ff;
+  text-decoration: underline;
+}
+
+form input, form textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: none;
+}
+
+form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #58a6ff;
+  color: #0d1117;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #161b22;
+  padding: 20px;
+  text-align: center;
+  color: #8b949e;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .skill, .project, .certification, .job {
+    width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-top: 20px;
+  }
 }
