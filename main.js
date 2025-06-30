@@ -1,162 +1,91 @@
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #0d1117;
-  color: #c9d1d9;
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Active navigation link highlight on scroll
+window.addEventListener('scroll', function () {
+  let current = '';
+  const sections = document.querySelectorAll('section');
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= (sectionTop - 100)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Contact form handler
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+
+    if (!name || !email || !subject || !message) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    const mailtoLink = `mailto:hardiksood8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    window.location.href = mailtoLink;
+
+    alert('Thank you for your message! Your email client should open now.');
+    contactForm.reset();
+  });
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background-color: #161b22;
+// Lazy load images
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src || img.src;
+        img.classList.remove('lazy');
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    observer.observe(img);
+  });
 }
 
-header .intro {
-  display: flex;
-  flex-direction: column;
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
-
-header p {
-  font-size: 1.2em;
-  margin: 5px 0 0;
-  color: #8b949e;
-}
-
-.profile-image {
-  border: 4px solid #58a6ff;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 150px;
-  height: 150px;
-}
-
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-nav {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #58a6ff;
-  font-size: 1em;
-  padding: 10px 20px;
-  border: 2px solid #58a6ff;
-  border-radius: 30px;
-  transition: 0.3s ease;
-}
-
-nav a:hover,
-nav a.active {
-  background-color: #58a6ff;
-  color: #0d1117;
-}
-
-.section {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #58a6ff;
-}
-
-.skills, .projects, .experience, .certifications {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.skill, .project, .certification, .job {
-  background: #161b22;
-  padding: 20px;
-  border-radius: 10px;
-  width: calc(33.33% - 40px);
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.skill:hover, .project:hover {
-  transform: scale(1.03);
-}
-
-.project-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.resume-download {
-  margin-top: 20px;
-}
-
-.resume-download a {
-  color: #58a6ff;
-  text-decoration: underline;
-}
-
-form input, form textarea {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 5px;
-  border: none;
-}
-
-form button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #58a6ff;
-  color: #0d1117;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-footer {
-  background-color: #161b22;
-  padding: 20px;
-  text-align: center;
-  color: #8b949e;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .skill, .project, .certification, .job {
-    width: 90%;
-  }
-
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-image {
-    margin-top: 20px;
-  }
-}
+// Welcome message in console
+console.log(`
+🚀 Welcome to Hardik Sood's Portfolio!
+💼 Data Science & AI Engineer
+📧 hardiksood8@gmail.com
+🌐 GitHub: https://github.com/hardiksood1
+💼 LinkedIn: https://linkedin.com/in/hardiksood1
+Thanks for visiting!
+`);
