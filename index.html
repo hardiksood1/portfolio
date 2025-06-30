@@ -1,42 +1,1388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hardik Sood - AI Engineer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="main.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardik Sood - AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base styles */
+        :root {
+            --primary: #0d1117;
+            --secondary: #161b22;
+            --accent: #58a6ff;
+            --text: #c9d1d9;
+            --light-text: #8b949e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            color: var(--accent);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* Header styles */
+        header {
+            background: var(--secondary);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: var(--accent);
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(88, 166, 255, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            color: var(--light-text);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(88, 166, 255, 0.2);
+            border-color: var(--accent);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(88, 166, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(88, 166, 255, 0.2);
+        }
+        
+        /* About section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .about-skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .skill-category h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li::before {
+            content: "▹";
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .skill-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .skill-items {
+            list-style: none;
+            color: var(--light-text);
+        }
+        
+        .skill-items li {
+            margin-bottom: 8px;
+        }
+        
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .project-description {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-tag {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Project Modal */
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 17, 23, 0.95);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 50px 20px;
+        }
+        
+        .modal-content {
+            background: var(--secondary);
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--accent);
+        }
+        
+        .modal-header {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .modal-subtitle {
+            color: var(--light-text);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: var(--accent);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 0 30px 30px;
+        }
+        
+        .modal-image {
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-section {
+            margin-bottom: 30px;
+        }
+        
+        .modal-section h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .modal-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .modal-section ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .modal-section ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .modal-section ul li::before {
+            content: "▹";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .tech-item {
+            background: rgba(88, 166, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            background: rgba(88, 166, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-details p, 
+        .contact-details a {
+            color: var(--light-text);
+            text-decoration: none;
+        }
+        
+        .contact-details a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--secondary);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 5px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(88, 166, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: var(--secondary);
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .modal-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skill-category {
+                width: 100%;
+            }
+            
+            .modal-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo">Hardik Sood</a>
-      <div class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Hi, I'm <span>Hardik Sood</span></h1>
-        <div class="hero-subtitle">AI Engineer | ML Developer | Data Scientist</div>
-        <p>MSc Data Science graduate with strong foundations in machine learning, deep learning, computer vision, and large language models. Skilled in Python, PyTorch, and SQL with experience in deploying intelligent systems for real-world applications.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-          <a href="projects.html" class="btn btn-secondary">View Projects</a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo"><i class="fas fa-code"></i>Hardik Sood</a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Hardik Sood</span></h1>
+                <div class="hero-subtitle">AI Engineer | ML Developer | Data Scientist</div>
+                <p>MSc Data Science graduate with strong foundations in machine learning, deep learning, computer vision, and large language models. Skilled in Python, PyTorch, and SQL with experience in deploying intelligent systems for real-world applications.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>AI Engineer & Data Scientist</h3>
+                    <p>MSc Data Science graduate with hands-on expertise in deploying AI applications in real-world domains such as healthcare, agriculture, surveillance, and e-commerce. Skilled in Python, PyTorch, TensorFlow, OpenCV, and cloud services like AWS & GCP.</p>
+                    <p>Built and deployed scalable solutions involving OCR, face recognition, product intelligence, and real-time tracking. Strong in LLM fine-tuning, MLOps with Docker & Triton, and cloud automation.</p>
+                    
+                    <div class="about-skills">
+                        <div class="skill-category">
+                            <h4>Technical Skills</h4>
+                            <ul class="skill-list">
+                                <li>Python, R, SQL, C++</li>
+                                <li>PyTorch, TensorFlow, Hugging Face</li>
+                                <li>OpenCV, ONNX, TensorRT</li>
+                                <li>AWS, Azure, Google Cloud</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Specializations</h4>
+                            <ul class="skill-list">
+                                <li>Computer Vision</li>
+                                <li>Natural Language Processing</li>
+                                <li>Real-time Object Detection</li>
+                                <li>Cloud Deployment & MLOps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop" alt="AI Engineer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="skill-title">Programming</h3>
+                    <ul class="skill-items">
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>SQL</li>
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="skill-title">AI/ML Frameworks</h3>
+                    <ul class="skill-items">
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>Hugging Face</li>
+                        <li>ONNX</li>
+                        <li>TensorRT</li>
+                        <li>PaddleOCR</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="skill-title">Cloud & DevOps</h3>
+                    <ul class="skill-items">
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>Google Cloud</li>
+                        <li>Docker</li>
+                        <li>Triton</li>
+                        <li>Flask</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-title">Data & Visualization</h3>
+                    <ul class="skill-items">
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Power BI</li>
+                        <li>Tableau</li>
+                        <li>Matplotlib</li>
+                        <li>Excel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-project="person-detection">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?q=80&w=2070&auto=format&fit=crop" alt="Person Detection">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real-Time Person Detection</h3>
+                        <p class="project-description">Advanced surveillance system with real-time person detection, tracking, and face recognition with ROI alerts.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">DeepSORT</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-project="yield-prediction">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?q=80&w=2070&auto=format&fit=crop" alt="Yield Prediction">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">LLM-based Yield Prediction</h3>
+                        <p class="project-description">Fine-tuned OpenLLaMA model using LoRA adapters for crop yield prediction from structured data.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenLLaMA</span>
+                            <span class="tech-tag">LoRA</span>
+                            <span class="tech-tag">Hugging Face</span>
+                            <span class="tech-tag">GCP</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-project="vehicle-monitoring">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1930&auto=format&fit=crop" alt="Vehicle Monitoring">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real-Time Vehicle Monitoring</h3>
+                        <p class="project-description">End-to-end vehicle detection and speed estimation pipeline for live video streams.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">YOLO</span>
+                            <span class="tech-tag">Real-time</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-project="medical-ocr">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop" alt="Medical OCR">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Medical Document OCR</h3>
+                        <p class="project-description">Solution to extract and summarize key information from medical documents and images.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Multilingual</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-project="product-intelligence">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=1956&auto=format&fit=crop" alt="Product Intelligence">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Product Image Intelligence</h3>
+                        <p class="project-description">AI-powered application that analyzes product images to generate titles and descriptions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">GCP</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-project="diabetic-prediction">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" alt="Diabetic Prediction">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Diabetic Patient Prediction</h3>
+                        <p class="project-description">Regression model achieving 8% MAPE for diabetes predictions with feature engineering.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Regression</span>
+                            <span class="tech-tag">EDA</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="skill-title">Apprentice</h3>
+                    <p class="skill-items">CCS Computer Private Limited</p>
+                    <p class="skill-items">Jan 2024 - Present</p>
+                    <ul class="skill-items">
+                        <li>Supported enterprise software deployment</li>
+                        <li>Assisted with technical troubleshooting</li>
+                        <li>Integrated data solutions under supervision</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="skill-title">Data Analyst Intern</h3>
+                    <p class="skill-items">Vodafone Idea Foundation</p>
+                    <p class="skill-items">Oct 2024 - Nov 2024</p>
+                    <ul class="skill-items">
+                        <li>Analyzed agriculture datasets</li>
+                        <li>Improved client efficiency by 15%</li>
+                        <li>Explored LLMs for case study reports</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">Data Science Intern</h3>
+                    <p class="skill-items">Code Alpha</p>
+                    <p class="skill-items">June 2024 - July 2024</p>
+                    <ul class="skill-items">
+                        <li>Built predictive models</li>
+                        <li>Achieved 92% accuracy</li>
+                        <li>Deployed customer behavior insights</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="skill-title">Data Science Intern</h3>
+                    <p class="skill-items">Cognifyz Technologies</p>
+                    <p class="skill-items">April 2024 - May 2024</p>
+                    <ul class="skill-items">
+                        <li>Delivered restaurant analytics</li>
+                        <li>Reduced costs by 18%</li>
+                        <li>Created forecasting models</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:hardiksood8@gmail.com">hardiksood8@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 6377279565</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Resume</h3>
+                            <a href="https://github.com/hardiksood1/portfolio/raw/main/Hardik%20Sood%20resume.pdf" target="_blank">Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/hardiksood1" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/hardiksood1" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 Hardik Sood. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <!-- Person Detection Modal -->
+    <div class="project-modal" id="person-detection-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal">&times;</button>
+                <h2 class="modal-title">Real-Time Person Detection, Tracking, and Face Recognition</h2>
+                <p class="modal-subtitle">Advanced surveillance system with ROI alerts</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?q=80&w=2070&auto=format&fit=crop" alt="Person Detection">
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Project Overview</h3>
+                    <p>Developed a robust surveillance system that detects and tracks persons in a video feed, recognizes known faces, logs entry and exit within polygonal ROIs, and sends WhatsApp alerts when persons enter sensitive regions. The system streams processed video live over RTSP for real-time monitoring.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Real-time person detection using YOLOv8 and face recognition</li>
+                        <li>Multi-object tracking with DeepSORT for consistent ID assignment</li>
+                        <li>Identification of known vs unknown individuals</li>
+                        <li>Custom polygonal ROI drawing using OpenCV</li>
+                        <li>Entry/exit tracking with time spent calculation</li>
+                        <li>Automated WhatsApp alerts with person ID, name, timestamp and snapshot</li>
+                        <li>Docker-based RTSP server for flexible deployment</li>
+                        <li>Real-time stream monitoring via VLC or any RTSP-compatible client</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">YOLOv8</div>
+                        <div class="tech-item">DeepSORT</div>
+                        <div class="tech-item">OpenCV</div>
+                        <div class="tech-item">FFmpeg</div>
+                        <div class="tech-item">Docker</div>
+                        <div class="tech-item">WhatsApp API</div>
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">Flask</div>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Skills Demonstrated</h3>
+                    <ul>
+                        <li>Real-time object detection & tracking</li>
+                        <li>Face recognition and re-identification</li>
+                        <li>ROI logic and event logging</li>
+                        <li>API integration (WhatsApp, RTSP)</li>
+                        <li>System deployment using Docker</li>
+                        <li>Asynchronous alert handling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+    
+    <!-- Yield Prediction Modal -->
+    <div class="project-modal" id="yield-prediction-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal">&times;</button>
+                <h2 class="modal-title">LLM-based Yield Prediction using OpenLLaMA & LoRA Fine-Tuning</h2>
+                <p class="modal-subtitle">NLP for regression task predicting crop yield</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?q=80&w=2070&auto=format&fit=crop" alt="Yield Prediction">
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Project Overview</h3>
+                    <p>Fine-tuned a 7B OpenLLaMA model using LoRA adapters for a regression task predicting crop yield from structured tabular data. Engineered prompt templates to convert regression into a text generation task, achieving scalable deployment-ready output with predictions stored in Excel.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Fine-tuned OpenLLaMA 7B model using LoRA adapters</li>
+                        <li>4-bit quantization and PEFT for memory-efficient training</li>
+                        <li>Engineered prompt templates from Excel data</li>
+                        <li>Converted regression task to text generation</li>
+                        <li>Evaluated using RMSE, MAE, and R² metrics</li>
+                        <li>Implemented JSONL dataset pipeline using Hugging Face Datasets</li>
+                        <li>Scalable deployment with predictions stored in Excel</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">OpenLLaMA 7B</div>
+                        <div class="tech-item">LoRA</div>
+                        <div class="tech-item">Hugging Face</div>
+                        <div class="tech-item">PEFT</div>
+                        <div class="tech-item">PyTorch</div>
+                        <div class="tech-item">GCP</div>
+                        <div class="tech-item">Linux</div>
+                        <div class="tech-item">Python</div>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Skills Demonstrated</h3>
+                    <ul>
+                        <li>LLM fine-tuning with adapters</li>
+                        <li>Memory-efficient model training</li>
+                        <li>Prompt engineering for regression tasks</li>
+                        <li>Quantization techniques</li>
+                        <li>Dataset pipeline implementation</li>
+                        <li>Model evaluation for regression tasks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+        
+        // Active link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Project modals
+        const projectCards = document.querySelectorAll('.project-card');
+        const modals = document.querySelectorAll('.project-modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+        
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project');
+                const modal = document.getElementById(`${projectId}-modal`);
+                if (modal) {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        });
+        
+        // Close modal when clicking outside content
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Console welcome message
+        console.log(`
+        🚀 Welcome to Hardik Sood's Portfolio!
+        💼 Data Science & AI Engineer
+        📧 hardiksood8@gmail.com
+        🌐 GitHub: https://github.com/hardiksood1
+        💼 LinkedIn: https://linkedin.com/in/hardiksood1
+
+        Thanks for checking out the code! 
+        `);
+    </script>
 </body>
 </html>
