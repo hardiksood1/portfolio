@@ -1,43 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hardik Sood | Data Science Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardik Sood - AI Engineer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-logo">ONLINE PORTFOLIO</div>
-    <ul class="nav-menu">
-      <li><a href="#about">ABOUT ME</a></li>
-      <li><a href="#education">EDUCATION</a></li>
-      <li><a href="#experience">EXPERIENCE</a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#contact" class="active">CONTACT</a></li>
-    </ul>
+  <header>
+    <div class="intro">
+      <h1>Hardik Sood</h1>
+      <p>AI Engineer | ML Developer | Data Scientist</p>
+    </div>
+    <div class="profile-image">
+      <img src="profilephoto.jpg" alt="Hardik Sood">
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#certifications" class="nav-link">Certifications</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-left">
-      <span class="hello">Hello !!!</span>
-      <h1>I'm <span class="highlight">Hardik Sood</span></h1>
-      <span class="subtitle">DATA SCIENCE & AI ENGINEER</span>
-      <p class="desc">
-        MSc Data Science graduate with expertise in Machine Learning, Deep Learning, Computer Vision, and LLMs.<br>
-        Passionate about building intelligent systems that solve real-world problems.
-      </p>
-    </div>
-    <div class="hero-right">
-      <img src="profilephoto.jpg" alt="Hardik Sood" class="hero-img">
-    </div>
-    <div class="bottom-bar">
-      <span>PORTFOLIO 2025</span>
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      MSc Data Science graduate with strong foundations in machine learning, deep learning, computer vision, and large language models. Skilled in Python, PyTorch, and SQL with experience in deploying intelligent systems for real-time object detection, document summarization, and e-commerce automation. Eager to contribute cutting-edge AI skills in research-driven or industry-ready roles.
+    </p>
+    <div class="resume-download">
+      <a href="Hardik_Sood_Resume_Updated.pdf" target="_blank">📄 Download Resume</a>
     </div>
   </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Python, R, SQL, C++, Java, HTML, CSS</div>
+      <div class="skill">PyTorch, Hugging Face, TensorRT, ONNX</div>
+      <div class="skill">Power BI, Tableau, Matplotlib</div>
+      <div class="skill">MySQL, MongoDB, Hive</div>
+      <div class="skill">OpenCV, Flask, Docker, FFmpeg, Gradio</div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img class="project-img" src="chatbot.png" alt="Product Image Intelligence">
+        <h3>Product Image Intelligence with DeepSeek Janus-Pro-7B</h3>
+        <p>Gradio app to auto-generate product metadata using Janus-Pro-7B.</p>
+      </div>
+      <div class="project">
+        <img class="project-img" src="image to text.jpg" alt="Medical OCR">
+        <h3>Medical OCR & Summarization</h3>
+        <p>OCR pipeline with Hindi numeral conversion and NVIDIA Gemma summarization.</p>
+      </div>
+      <div class="project">
+        <img class="project-img" src="speed estimation.png" alt="Vehicle Detection">
+        <h3>Vehicle Detection & Speed Estimation</h3>
+        <p>YOLOv8 + PaddleOCR with RTSP output and CSV logging.</p>
+      </div>
+      <div class="project">
+        <img class="project-img" src="peson detection.jfif" alt="Person Detection">
+        <h3>Real-Time Person Detection & Face Recognition</h3>
+        <p>Face recognition + WhatsApp alerts using YOLOv8 + DeepSORT.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2>Work Experience</h2>
+    <div class="experience">
+      <div class="job">
+        <h3>Apprentice - CCS Computer Pvt. Ltd</h3>
+        <p><em>Jan 2024 – Present</em></p>
+        <ul>
+          <li>Supported enterprise software deployment and troubleshooting.</li>
+          <li>Assisted in data integration under senior supervision.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Data Analyst Intern - Vodafone Idea Foundation</h3>
+        <p><em>Oct 2024 – Nov 2024</em></p>
+        <ul>
+          <li>Analyzed agriculture datasets and boosted efficiency by 15%.</li>
+          <li>Explored LLMs for report generation.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Data Science Intern - Code Alpha</h3>
+        <p><em>June 2024 – July 2024</em></p>
+        <ul>
+          <li>Built predictive models with 92%+ accuracy for customer insights.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Data Science Intern - Cognifyz Technologies</h3>
+        <p><em>April 2024 – May 2024</em></p>
+        <ul>
+          <li>Delivered analytics for restaurants, reducing costs by 18%.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="section">
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div class="certification">Google Data Analytics Professional Certificate</div>
+      <div class="certification">NLP on Google Cloud</div>
+      <div class="certification">Tata Data Visualization</div>
+      <div class="certification">Accenture NA Data Analytics and Visualization</div>
+      <div class="certification">Python & Java Fundamentals</div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Hardik Sood | Email: hardiksood8@gmail.com
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
