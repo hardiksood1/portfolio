@@ -1,119 +1,68 @@
-// Smooth scrolling for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+// Smooth scrolling for navigation links
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    // Only handle anchor links
+    if (this.hash) {
+      e.preventDefault();
+      const target = document.querySelector(this.hash);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 60, // Adjust if navbar is fixed
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+});
+
+// Active menu highlighting on scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-menu a');
+
+window.addEventListener('scroll', () => {
+  let scrollPos = window.scrollY + 80; // Adjust offset for fixed navbar
+  sections.forEach(section => {
+    if (
+      scrollPos >= section.offsetTop &&
+      scrollPos < section.offsetTop + section.offsetHeight
+    ) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.hash === `#${section.id}`) {
+          link.classList.add('active');
+        }
       });
     }
   });
 });
 
-// Scroll-to-top button (if needed)
-const scrollTopBtn = document.getElementById('scroll-top');
-if (scrollTopBtn) {
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      scrollTopBtn.classList.add('show');
-    } else {
-      scrollTopBtn.classList.remove('show');
-    }
-  });
-
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-// Navigation active highlight
-window.addEventListener('scroll', () => {
-  let current = '';
-  document.querySelectorAll('section').forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 200) {
-      current = section.getAttribute('id');
-    }
-  });
-  document.querySelectorAll('nav a').forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-});
-
-// Typing effect for .hero-title (optional)
-function typeWriter(element, text, speed = 100) {
+// Optional: Typing effect for subtitle (if you want it animated)
+function typeWriter(element, text, speed = 60) {
   let i = 0;
-  element.innerHTML = '';
-  function type() {
+  element.textContent = '';
+  function typing() {
     if (i < text.length) {
-      element.innerHTML += text.charAt(i);
+      element.textContent += text.charAt(i);
       i++;
-      setTimeout(type, speed);
+      setTimeout(typing, speed);
     }
   }
-  type();
+  typing();
 }
 
-// Lazy load images
-if ('IntersectionObserver' in window) {
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove('lazy');
-        imageObserver.unobserve(img);
-      }
-    });
-  });
+// Example usage for subtitle
+document.addEventListener('DOMContentLoaded', () => {
+  const subtitle = document.querySelector('.subtitle-typing');
+  if (subtitle) {
+    typeWriter(subtitle, subtitle.dataset.text || subtitle.textContent);
+  }
+});
 
-  document.querySelectorAll('img[data-src]').forEach(img => {
-    imageObserver.observe(img);
-  });
-}
-
-// Contact form handler (if form exists)
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-
-    if (!name || !email || !subject || !message) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    const mailtoLink = `mailto:hardiksood8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    window.location.href = mailtoLink;
-    alert('Thank you for your message! Your email client should open now.');
-    contactForm.reset();
+// Optional: Mobile menu toggle (if you add a hamburger menu)
+const navToggle = document.querySelector('.nav-toggle');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    document.querySelector('.nav-menu').classList.toggle('open');
+    navToggle.classList.toggle('open');
   });
 }
-
-// Console greeting
-console.log(`
-🚀 Welcome to Hardik Sood's Portfolio!
-💼 Data Science & AI Engineer
-📧 hardiksood8@gmail.com
-🌐 GitHub: https://github.com/hardiksood1
-💼 LinkedIn: https://linkedin.com/in/hardiksood1
-
-Thanks for checking out the code!
-`);
