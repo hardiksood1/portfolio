@@ -1,0 +1,449 @@
+:root {
+    --primary: #0A2540; /* Deep futuristic blue */
+    --secondary: #00D1FF; /* Vibrant cyan for AI accents */
+    --accent: #FF00FF; /* Magenta glow for highlights */
+    --background: #020D1A; /* Dark space-like background */
+    --text: #FFFFFF; /* Crisp white text */
+    --secondary-text: #B0C4DE; /* Light blue-gray for subtitles */
+    --card-bg: #112240; /* Semi-transparent dark cards */
+    --glow: rgba(0, 209, 255, 0.5); /* AI energy glow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+header {
+    background: rgba(2, 13, 26, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--glow);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 15px var(--glow);
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.svgrepo.com/download/421259/ai-brain-data.svg') no-repeat center/cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid var(--secondary);
+    box-shadow: 0 0 30px var(--glow);
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px var(--accent);
+    animation: glow 2s infinite alternate;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--secondary);
+    text-shadow: 0 0 15px var(--glow);
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+p {
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px var(--glow); }
+    to { text-shadow: 0 0 30px var(--accent); }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-text);
+    margin-bottom: 50px;
+}
+
+.btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: var(--background);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 5px 25px var(--glow);
+    transition: transform 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.about-section, .experience-section, .projects-section, .skills-section, .education-section, .contact {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    margin-bottom: 80px;
+}
+
+.experience-list, .projects-list, .skills-groups, .highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.experience-card, .project-card, .highlight-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--glow);
+    transition: transform 0.3s;
+}
+
+.experience-card:hover, .project-card:hover, .highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-group {
+    padding: 20px;
+}
+
+.skill-item {
+    margin-bottom: 30px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.skill-progress {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    height: 10px;
+}
+
+.skill-bar {
+    background: linear-gradient(to right, var(--secondary), var(--accent));
+    height: 100%;
+    border-radius: 20px;
+    transition: width 1.5s ease-in-out;
+}
+
+/* --- Education & Certification Section --- */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.education-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 5px 20px var(--glow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid var(--secondary);
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px var(--glow);
+}
+
+.education-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--secondary);
+    text-shadow: 0 0 8px var(--glow);
+}
+
+.education-card .edu-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+}
+
+.education-card .edu-details span {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 5px 12px;
+    border-radius: 12px;
+}
+
+.education-card p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* --- Certification badges inside Education --- */
+.certification-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: var(--background);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px var(--glow);
+    transition: transform 0.3s;
+}
+
+.certification-badge:hover {
+    transform: scale(1.05);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--secondary-text);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+}
+
+.contact-form button {
+    align-self: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    background: var(--accent);
+    transform: scale(1.1);
+    color: var(--background);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background: var(--card-bg);
+    color: var(--secondary-text);
+}
+
+@media (max-width: 992px) {
+    .experience-list, .projects-list, .skills-groups {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.animate-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
