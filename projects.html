@@ -5,7 +5,7 @@
   <title>Projects – Hardik Sood</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Icons -->
+  <!-- Font Awesome (used only for header icon if needed) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Particles -->
@@ -38,7 +38,6 @@
     }
 
     .logo { font-size: 22px; font-weight: bold; }
-    .logo i { color: var(--accent); }
 
     .nav-links {
       display: flex; list-style: none; gap: 20px;
@@ -141,7 +140,7 @@
 
 <header>
   <nav>
-    <div class="logo">HS <i class="fas fa-brain"></i></div>
+    <div class="logo">HS</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -158,6 +157,12 @@
   <h2>Projects</h2>
 
   <div class="projects-list">
+
+    <!-- NEW RAG PROJECT -->
+    <div class="project-card" onclick="openModal('rag')">
+      <h3>ChatGPT-Style RAG Assistant (From Scratch)</h3>
+      <p>Document-grounded AI assistant that answers strictly from uploaded PDFs with zero hallucination.</p>
+    </div>
 
     <div class="project-card" onclick="openModal('risk')">
       <h3>Hybrid AI Risk Assessment Engine</h3>
@@ -211,6 +216,36 @@
 <script>
 const projectDetails = {
 
+  rag: {
+    title: "ChatGPT-Style Retrieval-Augmented Generation (RAG) Assistant",
+    body: `
+      <p>
+        Built a document-grounded AI assistant that allows users to upload PDFs
+        and ask questions in a ChatGPT-like interface, with a strict rule:
+        <strong>answers are generated only from the document content</strong>.
+      </p>
+
+      <h4>Core Capabilities</h4>
+      <ul>
+        <li>PDF ingestion with intelligent chunking</li>
+        <li>FAISS-based semantic vector search</li>
+        <li>NVIDIA LLaMA-based LLM for accurate responses</li>
+        <li>MCP-style gating to prevent hallucinations</li>
+        <li>Explicit fallback: “Information not present in the PDF”</li>
+        <li>ChatGPT-like UI built using Streamlit</li>
+      </ul>
+
+      <h4>Why This Matters</h4>
+      <ul>
+        <li>Zero-hallucination document QA</li>
+        <li>Trustworthy, auditable responses</li>
+        <li>Ideal for research, legal, compliance & enterprise knowledge systems</li>
+      </ul>
+
+      <p><b>Focus:</b> Reliable, production-ready AI systems — not demo-only solutions.</p>
+    `
+  },
+
   risk: {
     title: "Hybrid AI Risk Assessment Engine",
     body: `
@@ -218,10 +253,9 @@ const projectDetails = {
         <li>RoBERTa classifier for SAFE / JAILBREAK / DATA LEAK / POLICY VIOLATION</li>
         <li>Rule-based detection for explicit risky patterns</li>
         <li>Hybrid decision logic combining ML confidence + rules</li>
-        <li>SHAP token-level explainability (no black-box decisions)</li>
+        <li>SHAP token-level explainability</li>
         <li>Compliance mapping for audits & governance</li>
       </ul>
-      <p><b>Use:</b> Banking AI, enterprise copilots, LLM guardrails</p>
     `
   },
 
@@ -229,10 +263,9 @@ const projectDetails = {
     title: "Product Image Intelligence Platform",
     body: `
       <ul>
-        <li>Image understanding using multimodal LLMs</li>
-        <li>Automatic title, brand, description & feature generation</li>
+        <li>Multimodal LLM-based image understanding</li>
+        <li>Automatic title, description & feature generation</li>
         <li>Google Shopping search via SerpAPI</li>
-        <li>Optimized for e-commerce cataloging</li>
       </ul>
     `
   },
@@ -243,7 +276,6 @@ const projectDetails = {
       <ul>
         <li>PaddleOCR-based multilingual text extraction</li>
         <li>Medical NLP summarization per patient</li>
-        <li>Numeral normalization & structured output</li>
       </ul>
     `
   },
@@ -253,9 +285,7 @@ const projectDetails = {
     body: `
       <ul>
         <li>YOLO-based vehicle detection</li>
-        <li>Speed estimation from video streams</li>
-        <li>Automatic Number Plate Recognition (ANPR)</li>
-        <li>Live annotated video & logging</li>
+        <li>Speed estimation & ANPR</li>
       </ul>
     `
   },
@@ -264,10 +294,9 @@ const projectDetails = {
     title: "Automated Security & Person Recognition",
     body: `
       <ul>
-        <li>YOLOv8 + DeepSORT person tracking</li>
-        <li>Polygonal ROI intrusion detection</li>
-        <li>WhatsApp alerts using Green API</li>
-        <li>RTSP input/output streaming</li>
+        <li>YOLOv8 + DeepSORT tracking</li>
+        <li>Polygonal ROI intrusion alerts</li>
+        <li>WhatsApp notifications</li>
       </ul>
     `
   },
@@ -276,9 +305,8 @@ const projectDetails = {
     title: "Agricultural Yield Prediction Tool",
     body: `
       <ul>
-        <li>ML-based yield prediction models</li>
-        <li>Data-driven insights for farmers</li>
-        <li>Improved planning & resource optimization</li>
+        <li>ML-based yield forecasting</li>
+        <li>Decision support for farmers</li>
       </ul>
     `
   },
@@ -287,9 +315,8 @@ const projectDetails = {
     title: "News Text Classification & Summarization",
     body: `
       <ul>
-        <li>RoBERTa-based text classification</li>
-        <li>Extractive & abstractive summarization analysis</li>
-        <li>Converted to ONNX for fast CPU inference</li>
+        <li>RoBERTa-based NLP models</li>
+        <li>ONNX-optimized inference</li>
         <li>Published research work (2025)</li>
       </ul>
     `
