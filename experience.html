@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience - Hardik Sood</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Particles -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
+
     <div id="particles-js"></div>
 
     <header>
         <nav class="container">
-            <div class="logo">HS <i class="fas fa-brain" style="color: var(--secondary);"></i></div>
-            <div class="nav-toggle"><i class="fas fa-bars"></i></div>
+            <div class="logo">HS</div>
+            <div class="nav-toggle">☰</div>
+
             <ul class="nav-links">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="experience.html">Experience</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="education.html">Education</a></li>
@@ -28,52 +33,76 @@
     </header>
 
     <section id="experience" class="experience-section container animate-in">
-        <h2>Professional Experience <img src="https://www.svgrepo.com/download/308947/ai-artificial-intelligence-computer-ai.svg" alt="AI Computer Icon" class="icon"></h2>
+        <h2>Professional Experience</h2>
+
         <div class="experience-list">
+
+            <!-- C3iHub -->
             <div class="experience-card">
-                <img src="https://www.svgrepo.com/download/535603/robot.svg" alt="Robot Icon" class="icon">
                 <div>
-                    <h3>AI Apprentice - CCS Computer Private Limited | Feb 2025 – Present</h3>
+                    <h3>Intern – C3iHub, IIT Kanpur | Nov 2025 – Present</h3>
                     <ul>
-                        <li>Fine-tuned 7B parameter models with LoRA PEFT</li>
-                        <li>Built video analytics using NVIDIA DeepStream</li>
-                        <li>Deployed YOLO with DeepSORT integration</li>
-                        <li>Optimized RoBERTa on Triton Server</li>
+                        <li>Performing NIDS log analysis to reduce false positives using XGBoost and CatBoost classifiers</li>
+                        <li>Analyzing network traffic across industrial control protocols including Modbus, S7comm, and CIM</li>
+                        <li>Developing hybrid ML-based intrusion detection models for anomaly detection</li>
+                        <li>Supporting secure ML pipeline development and vulnerability analysis tools</li>
+                        <li>Collaborating with multidisciplinary teams to design scalable AI-driven security solutions</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- CCS -->
             <div class="experience-card">
-                <img src="https://www.svgrepo.com/download/421259/ai-brain-data.svg" alt="AI Brain Icon" class="icon">
                 <div>
-                    <h3>Data Analytics Intern - Vodafone Idea Foundation | Oct – Nov 2024</h3>
+                    <h3>AI Apprentice – CCS Computer Private Limited | Feb 2025 – Oct 2025</h3>
                     <ul>
-                        <li>Led agri-tech data analysis project</li>
-                        <li>Generated 15% efficiency insights</li>
-                        <li>Applied advanced analytics with LLMs</li>
+                        <li>Fine-tuned a 7B parameter Hugging Face model using LoRA (PEFT) for efficient adaptation</li>
+                        <li>Developed video analytics pipelines using OpenCV, GStreamer, and NVIDIA DeepStream SDK</li>
+                        <li>Trained and deployed YOLOv5 and YOLOv8 models with DeepSORT-based tracking and re-identification</li>
+                        <li>Implemented multilingual OCR pipelines using PaddleOCR for documents and video frames</li>
+                        <li>Trained a RoBERTa-based NLP model, converted to ONNX, optimized with TensorRT, and deployed on NVIDIA Triton</li>
+                        <li>Built RAG-based QA systems using NVIDIA NeMo and FAISS</li>
+                        <li>Developed secure Node.js backend APIs with JWT authentication and MySQL integration</li>
+                        <li>Received formal appreciation from company leadership for end-to-end project ownership</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Vodafone -->
             <div class="experience-card">
-                <img src="https://www.svgrepo.com/download/447866/ai-mi-algorithm.svg" alt="AI Algorithm Icon" class="icon">
                 <div>
-                    <h3>Summer Intern - Code Alpha | June – July 2024</h3>
+                    <h3>Data Analytics Intern – Vodafone Idea Foundation | Oct – Nov 2024</h3>
                     <ul>
-                        <li>Developed customer behavior models</li>
-                        <li>Achieved 92% predictive accuracy</li>
-                        <li>Optimized for production deployment</li>
+                        <li>Led an agriculture and technology data analysis project</li>
+                        <li>Generated insights contributing to a 15% increase in operational efficiency</li>
+                        <li>Conducted case studies using advanced analytics and language model insights</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Code Alpha -->
             <div class="experience-card">
-                <img src="https://www.svgrepo.com/download/339702/ai-ethics.svg" alt="AI Ethics Icon" class="icon">
                 <div>
-                    <h3>Data Science Intern - Cognifyz Technologies | April – May 2024</h3>
+                    <h3>Summer Intern – Code Alpha | June – July 2024</h3>
                     <ul>
-                        <li>Built restaurant forecasting models</li>
-                        <li>Reduced costs by 18% through optimization</li>
+                        <li>Developed and deployed predictive models for customer behavior analysis</li>
+                        <li>Achieved up to 92% accuracy across predictive modeling tasks</li>
+                        <li>Optimized models for production-oriented deployment</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Cognifyz -->
+            <div class="experience-card">
+                <div>
+                    <h3>Data Science Intern – Cognifyz Technologies | April – May 2024</h3>
+                    <ul>
+                        <li>Conducted restaurant data analysis and demand forecasting</li>
+                        <li>Reduced operational costs by 18% using optimized ML models and visualizations</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
