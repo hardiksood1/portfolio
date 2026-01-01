@@ -8,13 +8,45 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Font Awesome (ONLY for GitHub & LinkedIn icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Particles -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Page-specific fixes -->
+    <style>
+        .about {
+            padding: 40px 0;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            margin-top: 24px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-links a {
+            font-size: 26px;
+            color: #38bdf8;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: #60a5fa;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 
     <div id="particles-js"></div>
 
+    <!-- Header -->
     <header>
         <nav class="container">
             <div class="logo">HS</div>
@@ -31,6 +63,7 @@
         </nav>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="about container animate-in">
         <h2>About Me</h2>
 
@@ -40,46 +73,47 @@
             Artificial Intelligence, Machine Learning, Computer Vision, and
             Large Language Models. My work focuses on building
             <strong>scalable, secure, and production-ready AI systems</strong>
-            across domains such as cybersecurity, healthcare, agriculture,
-            and intelligent video analytics.
+            across cybersecurity, healthcare, agriculture, and intelligent video analytics.
         </p>
 
         <p>
             I have practical expertise in model optimization and deployment using
             <strong>ONNX, NVIDIA TensorRT, Triton Inference Server, NVIDIA NeMo, and NIM</strong>,
-            as well as experience in Retrieval-Augmented Generation (RAG),
+            along with experience in Retrieval-Augmented Generation (RAG),
             secure ML pipelines, and real-time AI inference.
         </p>
 
         <p>
             My research interests include <strong>Natural Language Processing,
-            Explainable AI, and AI security</strong>. I am the author of
-            <strong>one peer-reviewed research publication</strong> in news text
-            summarization and the inventor of <strong>five granted patents</strong>
-            focused on intelligent automation, safety systems, and smart infrastructure.
+            Explainable AI, and AI Security</strong>. I am the author of
+            <strong>one peer-reviewed international journal publication</strong>
+            in news text summarization and the inventor of
+            <strong>five granted patents</strong> focused on intelligent automation,
+            safety systems, and smart infrastructure.
         </p>
 
         <div class="highlights">
             <div class="highlight-card">
-                Research & Innovation: 1 international journal publication and 5 patents
+                Research & Innovation: 1 international publication and 5 patents
             </div>
             <div class="highlight-card">
-                AI Engineering: Optimized and deployed models using ONNX, TensorRT & Triton
+                AI Engineering: Optimized & deployed models using ONNX, TensorRT & Triton
             </div>
             <div class="highlight-card">
-                Real-World Impact: Delivered high-accuracy models and measurable efficiency gains
+                Real-World Impact: High-accuracy models with measurable efficiency gains
             </div>
             <div class="highlight-card">
                 Enterprise Systems: End-to-end AI solutions from data to deployment
             </div>
         </div>
 
+        <!-- Social Links -->
         <div class="social-links">
-            <a href="https://github.com/hardiksood1" class="social-link" target="_blank" rel="noopener">
-                GitHub
+            <a href="https://github.com/hardiksood1" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/hardik-sood-0a8a14229/" class="social-link" target="_blank" rel="noopener">
-                LinkedIn
+            <a href="https://www.linkedin.com/in/hardik-sood-0a8a14229/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
             </a>
         </div>
 
@@ -88,6 +122,7 @@
         </a>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2025 Hardik Sood. All rights reserved.</p>
     </footer>
