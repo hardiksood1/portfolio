@@ -1,87 +1,8 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Hardik Sood</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-</head>
-<body>
-    <div id="particles-js"></div>
-
-    <header>
-        <nav class="container">
-            <div class="logo">HS <i class="fas fa-brain" style="color: var(--secondary);"></i></div>
-            <div class="nav-toggle"><i class="fas fa-bars"></i></div>
-            <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="projects" class="projects-section container animate-in">
-        <h2>Featured Projects <img src="https://www.svgrepo.com/download/447866/ai-mi-algorithm.svg" alt="AI Algorithm Icon" class="icon"></h2>
-        <div class="projects-list">
-            <div class="project-card">
-                <img src="https://www.svgrepo.com/download/339702/ai-ethics.svg" alt="AI Ethics Icon" class="icon">
-                <div>
-                    <h3>Product Image Intelligence Platform</h3>
-                    <p>AI system for e-commerce image analysis and content generation using LLaMA Multi-modal, Computer Vision, ScriptPI Integration.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://www.svgrepo.com/download/421259/ai-brain-data.svg" alt="AI Brain Icon" class="icon">
-                <div>
-                    <h3>Medical Document OCR & Summarization</h3>
-                    <p>Extraction and summarization of medical data with multilingual support using OCR, NLP, and Medical AI.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://www.svgrepo.com/download/535603/robot.svg" alt="Robot Icon" class="icon">
-                <div>
-                    <h3>Real-Time Vehicle Monitoring</h3>
-                    <p>Vehicle detection, speed estimation, and license plate recognition using Computer Vision, YOLO, and OpenCV.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://www.svgrepo.com/download/308947/ai-artificial-intelligence-computer-ai.svg" alt="AI Computer Icon" class="icon">
-                <div>
-                    <h3>Automated Security System</h3>
-                    <p>Person detection with real-time alerts via WhatsApp using Person Detection, ROI Analysis, and WhatsApp API.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://www.svgrepo.com/download/421259/ai-brain-data.svg" alt="AI Brain Icon" class="icon">
-                <div>
-                    <h3>Agricultural Yield Prediction</h3>
-                    <p>ML-based crop yield forecasting for smart farming using Machine Learning, Predictive Analytics, and Data Science.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 Hardik Sood. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projects - Hardik Sood</title>
+  <title>Projects – Hardik Sood</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Icons -->
@@ -92,63 +13,44 @@
 
   <style>
     :root {
-      --primary: #0f172a;
-      --secondary: #38bdf8;
+      --bg: #020617;
+      --card: #0f172a;
+      --accent: #38bdf8;
       --text: #e5e7eb;
-      --card: #111827;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Segoe UI", sans-serif; }
 
-    body {
-      background: var(--primary);
-      color: var(--text);
-    }
+    body { background: var(--bg); color: var(--text); }
 
     #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+      position: fixed; inset: 0; z-index: -1;
     }
 
     header {
-      padding: 15px 40px;
-      background: rgba(15,23,42,0.9);
-      position: sticky;
-      top: 0;
+      padding: 16px 40px;
+      background: rgba(2,6,23,0.9);
+      position: sticky; top: 0;
     }
 
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
+    .logo { font-size: 22px; font-weight: bold; }
+    .logo i { color: var(--accent); }
 
     .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+      display: flex; list-style: none; gap: 20px;
     }
 
     .nav-links a {
-      color: var(--text);
-      text-decoration: none;
+      text-decoration: none; color: var(--text);
     }
 
-    /* Projects */
+    /* PROJECTS */
     .projects-section {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 80px auto;
       padding: 20px;
     }
@@ -156,32 +58,32 @@
     .projects-section h2 {
       font-size: 32px;
       margin-bottom: 30px;
-      color: var(--secondary);
+      color: var(--accent);
     }
 
     .projects-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+      gap: 24px;
     }
 
     .project-card {
       background: var(--card);
-      padding: 20px;
+      padding: 22px;
       border-radius: 14px;
       cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: 0.3s;
       border: 1px solid rgba(56,189,248,0.15);
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 30px rgba(56,189,248,0.2);
+      box-shadow: 0 0 30px rgba(56,189,248,0.25);
     }
 
     .project-card h3 {
-      color: var(--secondary);
-      margin-bottom: 10px;
+      color: var(--accent);
+      margin-bottom: 8px;
     }
 
     .project-card p {
@@ -189,7 +91,7 @@
       line-height: 1.5;
     }
 
-    /* Modal */
+    /* MODAL */
     .modal {
       display: none;
       position: fixed;
@@ -201,34 +103,24 @@
 
     .modal-content {
       background: #020617;
-      max-width: 750px;
-      margin: 6% auto;
+      max-width: 800px;
+      margin: 5% auto;
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 0 40px rgba(56,189,248,0.3);
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal-content h3 {
-      color: var(--secondary);
-      margin-bottom: 15px;
-    }
-
-    .modal-content ul {
-      padding-left: 20px;
-      margin: 10px 0;
-    }
-
-    .modal-content li {
-      margin-bottom: 8px;
+      animation: fadeIn 0.25s ease;
     }
 
     .close {
       float: right;
       font-size: 28px;
       cursor: pointer;
-      color: var(--secondary);
+      color: var(--accent);
     }
+
+    .modal-content h3 { color: var(--accent); margin-bottom: 12px; }
+    .modal-content ul { padding-left: 20px; margin: 12px 0; }
+    .modal-content li { margin-bottom: 8px; }
 
     footer {
       text-align: center;
@@ -237,7 +129,7 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
+      from { opacity: 0; transform: scale(0.96); }
       to { opacity: 1; transform: scale(1); }
     }
   </style>
@@ -249,7 +141,7 @@
 
 <header>
   <nav>
-    <div class="logo">HS <i class="fas fa-brain" style="color:var(--secondary)"></i></div>
+    <div class="logo">HS <i class="fas fa-brain"></i></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -263,23 +155,43 @@
 </header>
 
 <section class="projects-section">
-  <h2>Featured Projects</h2>
+  <h2>Projects</h2>
 
   <div class="projects-list">
 
     <div class="project-card" onclick="openModal('risk')">
       <h3>Hybrid AI Risk Assessment Engine</h3>
-      <p>Secure, explainable AI system to detect jailbreaks, data leaks, and policy violations before LLM execution.</p>
+      <p>Pre-LLM security layer for jailbreak, data-leak & policy-violation detection.</p>
     </div>
 
-    <div class="project-card" onclick="openModal('news')">
-      <h3>News Text Classification System</h3>
-      <p>RoBERTa-based NLP pipeline with ONNX optimization for fast, production-ready inference.</p>
+    <div class="project-card" onclick="openModal('product')">
+      <h3>Product Image Intelligence Platform</h3>
+      <p>AI-powered e-commerce image analysis & content generation system.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('medical')">
+      <h3>Medical Document OCR & Summarization</h3>
+      <p>Multilingual medical document extraction & AI summarization.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('vehicle')">
+      <h3>Real-Time Vehicle Monitoring System</h3>
+      <p>Vehicle detection, speed estimation & ANPR from live streams.</p>
     </div>
 
     <div class="project-card" onclick="openModal('security')">
-      <h3>Automated Security & Surveillance System</h3>
-      <p>Real-time person detection with ROI analytics and instant WhatsApp alerts.</p>
+      <h3>Automated Security & Person Recognition</h3>
+      <p>YOLO-based ROI intrusion detection with WhatsApp alerts.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('agri')">
+      <h3>Agricultural Yield Prediction Tool</h3>
+      <p>ML-based crop yield forecasting for smart farming.</p>
+    </div>
+
+    <div class="project-card" onclick="openModal('news')">
+      <h3>News Text Classification & Summarization</h3>
+      <p>RoBERTa-based NLP pipelines with ONNX optimization.</p>
     </div>
 
   </div>
@@ -294,93 +206,106 @@
   </div>
 </div>
 
-<footer>
-  © 2025 Hardik Sood. All rights reserved.
-</footer>
+<footer>© 2025 Hardik Sood. All rights reserved.</footer>
 
 <script>
 const projectDetails = {
 
   risk: {
-    title: "Hybrid AI Risk Assessment Engine for Safer AI Systems",
+    title: "Hybrid AI Risk Assessment Engine",
     body: `
-      <p><b>Overview:</b> A pre-LLM security layer designed to evaluate user prompts before they reach large language models.</p>
-
-      <h4>🔍 How It Works</h4>
       <ul>
-        <li>RoBERTa-based ML classifier for SAFE, JAILBREAK, DATA LEAK, POLICY VIOLATION</li>
-        <li>Rule-based engine for explicit risk patterns</li>
-        <li>Hybrid decision logic (ML confidence + rule severity)</li>
-        <li>SHAP-based token-level explainability</li>
+        <li>RoBERTa classifier for SAFE / JAILBREAK / DATA LEAK / POLICY VIOLATION</li>
+        <li>Rule-based detection for explicit risky patterns</li>
+        <li>Hybrid decision logic combining ML confidence + rules</li>
+        <li>SHAP token-level explainability (no black-box decisions)</li>
         <li>Compliance mapping for audits & governance</li>
       </ul>
-
-      <h4>💡 Why It Matters</h4>
-      <ul>
-        <li>Prevents prompt injection & jailbreak attacks</li>
-        <li>Stops leakage of financial & credential data</li>
-        <li>Ensures transparent, auditable AI decisions</li>
-      </ul>
-
-      <h4>🏦 Applications</h4>
-      <ul>
-        <li>Banking & FinTech AI safety filters</li>
-        <li>Enterprise AI copilots</li>
-        <li>Customer-facing chatbots</li>
-        <li>AI compliance pipelines</li>
-      </ul>
-
-      <p><b>Tech Stack:</b> Streamlit, RoBERTa, SHAP, Hybrid AI Architecture</p>
+      <p><b>Use:</b> Banking AI, enterprise copilots, LLM guardrails</p>
     `
   },
 
-  news: {
-    title: "News Text Classification System",
+  product: {
+    title: "Product Image Intelligence Platform",
     body: `
       <ul>
-        <li>Fine-tuned RoBERTa for text classification</li>
-        <li>Converted model to ONNX for optimized CPU inference</li>
-        <li>Production-ready inference pipeline</li>
+        <li>Image understanding using multimodal LLMs</li>
+        <li>Automatic title, brand, description & feature generation</li>
+        <li>Google Shopping search via SerpAPI</li>
+        <li>Optimized for e-commerce cataloging</li>
       </ul>
+    `
+  },
 
-      <p><b>Language Support:</b> English, Hinglish (or any language with labeled data)</p>
-      <p><b>Use Cases:</b> News filtering, moderation, sentiment & topic analysis</p>
+  medical: {
+    title: "Medical Document OCR & Summarization",
+    body: `
+      <ul>
+        <li>PaddleOCR-based multilingual text extraction</li>
+        <li>Medical NLP summarization per patient</li>
+        <li>Numeral normalization & structured output</li>
+      </ul>
+    `
+  },
+
+  vehicle: {
+    title: "Real-Time Vehicle Monitoring System",
+    body: `
+      <ul>
+        <li>YOLO-based vehicle detection</li>
+        <li>Speed estimation from video streams</li>
+        <li>Automatic Number Plate Recognition (ANPR)</li>
+        <li>Live annotated video & logging</li>
+      </ul>
     `
   },
 
   security: {
-    title: "Automated Security & Surveillance System",
+    title: "Automated Security & Person Recognition",
     body: `
       <ul>
-        <li>YOLO-based real-time person detection</li>
-        <li>Polygonal ROI monitoring</li>
-        <li>Entry/exit tracking with timestamps</li>
-        <li>Instant WhatsApp alert integration</li>
+        <li>YOLOv8 + DeepSORT person tracking</li>
+        <li>Polygonal ROI intrusion detection</li>
+        <li>WhatsApp alerts using Green API</li>
+        <li>RTSP input/output streaming</li>
       </ul>
+    `
+  },
 
-      <p><b>Deployment:</b> RTSP streams, server-side processing</p>
-      <p><b>Tech Stack:</b> YOLOv8, OpenCV, Python, WhatsApp API</p>
+  agri: {
+    title: "Agricultural Yield Prediction Tool",
+    body: `
+      <ul>
+        <li>ML-based yield prediction models</li>
+        <li>Data-driven insights for farmers</li>
+        <li>Improved planning & resource optimization</li>
+      </ul>
+    `
+  },
+
+  news: {
+    title: "News Text Classification & Summarization",
+    body: `
+      <ul>
+        <li>RoBERTa-based text classification</li>
+        <li>Extractive & abstractive summarization analysis</li>
+        <li>Converted to ONNX for fast CPU inference</li>
+        <li>Published research work (2025)</li>
+      </ul>
     `
   }
-
 };
 
 function openModal(key) {
-  document.getElementById("modalTitle").innerHTML = projectDetails[key].title;
-  document.getElementById("modalBody").innerHTML = projectDetails[key].body;
-  document.getElementById("projectModal").style.display = "block";
+  modalTitle.innerHTML = projectDetails[key].title;
+  modalBody.innerHTML = projectDetails[key].body;
+  projectModal.style.display = "block";
 }
 
 function closeModal() {
-  document.getElementById("projectModal").style.display = "none";
+  projectModal.style.display = "none";
 }
-</script>
-
-<script>
-particlesJS.load('particles-js', 'particles.json', function() {});
 </script>
 
 </body>
 </html>
-
-
