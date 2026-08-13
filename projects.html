@@ -1,289 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects – Hardik Sood</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Hardik Sood | AI/ML Engineer</title>
+    <meta name="description" content="Selected AI/ML projects by Hardik Sood — computer vision, RAG, LLMs, and autonomous-systems work.">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #0f172a;
-      --accent: #38bdf8;
-      --text: #e5e7eb;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Segoe UI", sans-serif; }
-    body { background: var(--bg); color: var(--text); }
-
-    #particles-js { position: fixed; inset: 0; z-index: -1; }
-
-    header {
-      padding: 16px 40px;
-      background: rgba(2,6,23,0.9);
-      position: sticky; top: 0;
-    }
-
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 22px; font-weight: bold; }
-
-    .nav-links { display: flex; list-style: none; gap: 20px; }
-    .nav-links a { text-decoration: none; color: var(--text); }
-
-    .projects-section {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 20px;
-    }
-
-    .projects-section h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
-      color: var(--accent);
-    }
-
-    .projects-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .project-card {
-      background: var(--card);
-      padding: 22px;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: 0.3s;
-      border: 1px solid rgba(56,189,248,0.15);
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 30px rgba(56,189,248,0.25);
-    }
-
-    .project-card h3 { color: var(--accent); margin-bottom: 8px; }
-    .project-card p { font-size: 15px; line-height: 1.5; }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(6px);
-      z-index: 999;
-    }
-
-    .modal-content {
-      background: #020617;
-      max-width: 800px;
-      margin: 5% auto;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 0 40px rgba(56,189,248,0.3);
-    }
-
-    .close {
-      float: right;
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--accent);
-    }
-
-    .modal-content h3 { color: var(--accent); margin-bottom: 12px; }
-    .modal-content ul { padding-left: 20px; margin: 12px 0; }
-    .modal-content li { margin-bottom: 8px; }
-
-    footer { text-align: center; padding: 20px; opacity: 0.7; }
-  </style>
+    <!-- Particles -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
-
 <body>
 
-<div id="particles-js"></div>
+    <div id="particles-js"></div>
 
-<header>
-  <nav>
-    <div class="logo">HS</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <header>
+        <nav class="container">
+            <div class="logo">HS</div>
+            <div class="nav-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="projects-section">
-  <h2>Projects</h2>
+    <section id="projects" class="projects-section container animate-in">
+        <h2>Projects</h2>
 
-  <div class="projects-list">
+        <div class="projects-list">
 
-    <div class="project-card" onclick="openModal('rag')">
-      <h3>ChatGPT-Style RAG Assistant (From Scratch)</h3>
-      <p>Document-grounded AI assistant with zero hallucination.</p>
+            <div class="project-card" onclick="openModal('drone')">
+                <h3>AI/ML for Drone &amp; Autonomous Systems <span class="placeholder-note">Draft</span></h3>
+                <p>Computer vision and edge-inference work applied to aerial/autonomous platforms.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('rag')">
+                <h3>ChatGPT-Style RAG Assistant (From Scratch)</h3>
+                <p>Document-grounded AI assistant with zero hallucination.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('risk')">
+                <h3>Hybrid AI Risk Assessment Engine</h3>
+                <p>Pre-LLM security layer for jailbreak &amp; policy violations.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('product')">
+                <h3>Product Image Intelligence Platform</h3>
+                <p>AI-powered e-commerce image analysis.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('medical')">
+                <h3>Medical Document OCR &amp; Summarization</h3>
+                <p>Multilingual medical document extraction.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('vehicle')">
+                <h3>Real-Time Vehicle Monitoring System</h3>
+                <p>Vehicle detection, speed estimation &amp; ANPR.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('security')">
+                <h3>Automated Security &amp; Person Recognition</h3>
+                <p>YOLO-based ROI intrusion alerts.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('agri')">
+                <h3>Agricultural Yield Prediction Tool</h3>
+                <p>ML-based crop yield forecasting.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('news')">
+                <h3>News Text Classification &amp; Summarization</h3>
+                <p>RoBERTa-based NLP pipelines.</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('helmet')">
+                <h3>AI-Based Helmet Detection</h3>
+                <p>Real-time helmet / no-helmet detection using YOLO + OpenCV.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <div id="modalBody"></div>
+        </div>
     </div>
 
-    <div class="project-card" onclick="openModal('risk')">
-      <h3>Hybrid AI Risk Assessment Engine</h3>
-      <p>Pre-LLM security layer for jailbreak & violations.</p>
-    </div>
+    <footer>
+        <p>© 2025 Hardik Sood. All rights reserved.</p>
+    </footer>
 
-    <div class="project-card" onclick="openModal('product')">
-      <h3>Product Image Intelligence Platform</h3>
-      <p>AI-powered e-commerce image analysis.</p>
-    </div>
+    <script src="script.js"></script>
+    <script>
+        const projectDetails = {
 
-    <div class="project-card" onclick="openModal('medical')">
-      <h3>Medical Document OCR & Summarization</h3>
-      <p>Multilingual medical document extraction.</p>
-    </div>
+            drone: {
+                title: "AI/ML for Drone & Autonomous Systems",
+                body: `
+                    <p style="margin-bottom:10px;color:var(--secondary-text);">Applying computer-vision and edge-inference experience to aerial and autonomous platforms.</p>
+                    <ul>
+                        <li>[Add: onboard detection/tracking model, flight-data pipeline, or navigation/obstacle-avoidance work]</li>
+                        <li>[Add: hardware/software stack used]</li>
+                        <li>[Add: measured outcome or deployment scale]</li>
+                    </ul>`
+            },
 
-    <div class="project-card" onclick="openModal('vehicle')">
-      <h3>Real-Time Vehicle Monitoring System</h3>
-      <p>Vehicle detection, speed estimation & ANPR.</p>
-    </div>
+            rag: {
+                title: "ChatGPT-Style Retrieval-Augmented Generation (RAG) Assistant",
+                body: `
+                    <ul>
+                        <li>PDF ingestion with intelligent chunking</li>
+                        <li>FAISS-based semantic search</li>
+                        <li>NVIDIA LLaMA-based responses</li>
+                        <li>MCP-style gating to prevent hallucinated answers</li>
+                    </ul>`
+            },
 
-    <div class="project-card" onclick="openModal('security')">
-      <h3>Automated Security & Person Recognition</h3>
-      <p>YOLO-based ROI intrusion alerts.</p>
-    </div>
+            risk: {
+                title: "Hybrid AI Risk Assessment Engine",
+                body: `
+                    <ul>
+                        <li>RoBERTa-based risk classification</li>
+                        <li>Rule + ML hybrid decision logic</li>
+                        <li>Explainable AI with SHAP</li>
+                    </ul>`
+            },
 
-    <div class="project-card" onclick="openModal('agri')">
-      <h3>Agricultural Yield Prediction Tool</h3>
-      <p>ML-based crop yield forecasting.</p>
-    </div>
+            product: {
+                title: "Product Image Intelligence Platform",
+                body: `
+                    <ul>
+                        <li>Multimodal image understanding</li>
+                        <li>Automated title/description generation</li>
+                        <li>Google Shopping lookups via SerpAPI</li>
+                    </ul>`
+            },
 
-    <div class="project-card" onclick="openModal('news')">
-      <h3>News Text Classification & Summarization</h3>
-      <p>RoBERTa-based NLP pipelines.</p>
-    </div>
+            medical: {
+                title: "Medical Document OCR & Summarization",
+                body: `
+                    <ul>
+                        <li>PaddleOCR multilingual extraction</li>
+                        <li>Per-patient medical NLP summarization</li>
+                    </ul>`
+            },
 
-    <!-- ✅ ADDED PROJECT -->
-    <div class="project-card" onclick="openModal('helmet')">
-      <h3>AI-Based Helmet Detection | Computer Vision Demo</h3>
-      <p>Real-time helmet & no-helmet detection using YOLO + OpenCV.</p>
-    </div>
+            vehicle: {
+                title: "Real-Time Vehicle Monitoring System",
+                body: `
+                    <ul>
+                        <li>YOLO vehicle detection</li>
+                        <li>Speed estimation & automated license-plate recognition</li>
+                    </ul>`
+            },
 
-  </div>
-</section>
+            security: {
+                title: "Automated Security & Person Recognition",
+                body: `
+                    <ul>
+                        <li>YOLOv8 + DeepSORT tracking</li>
+                        <li>Polygonal ROI intrusion alerts</li>
+                    </ul>`
+            },
 
-<div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h3 id="modalTitle"></h3>
-    <div id="modalBody"></div>
-  </div>
-</div>
+            agri: {
+                title: "Agricultural Yield Prediction Tool",
+                body: `
+                    <ul>
+                        <li>ML-based crop yield forecasting</li>
+                        <li>Supports farmer/agribusiness resource planning</li>
+                    </ul>`
+            },
 
-<footer>© 2025 Hardik Sood. All rights reserved.</footer>
+            news: {
+                title: "News Text Classification & Summarization",
+                body: `
+                    <ul>
+                        <li>RoBERTa-based NLP</li>
+                        <li>ONNX-optimized inference on NVIDIA Triton</li>
+                    </ul>`
+            },
 
-<script>
-const projectDetails = {
+            helmet: {
+                title: "AI-Based Helmet Detection — Computer Vision Demo",
+                body: `
+                    <ul>
+                        <li>YOLO + OpenCV based detection</li>
+                        <li>Instant no-helmet violation alerts</li>
+                        <li>Snapshot capture for enforcement</li>
+                        <li>Demo-only (limited training data)</li>
+                    </ul>`
+            }
+        };
 
-  rag: {
-    title: "ChatGPT-Style Retrieval-Augmented Generation (RAG) Assistant",
-    body: `
-      <ul>
-        <li>PDF ingestion with intelligent chunking</li>
-        <li>FAISS-based semantic search</li>
-        <li>NVIDIA LLaMA-based responses</li>
-        <li>Zero-hallucination guarantee</li>
-      </ul>`
-  },
+        function openModal(key) {
+            document.getElementById('modalTitle').innerHTML = projectDetails[key].title;
+            document.getElementById('modalBody').innerHTML = projectDetails[key].body;
+            document.getElementById('projectModal').style.display = "block";
+        }
 
-  risk: {
-    title: "Hybrid AI Risk Assessment Engine",
-    body: `
-      <ul>
-        <li>RoBERTa-based risk classification</li>
-        <li>Rule + ML hybrid decision logic</li>
-        <li>Explainable AI with SHAP</li>
-      </ul>`
-  },
+        function closeModal() {
+            document.getElementById('projectModal').style.display = "none";
+        }
 
-  product: {
-    title: "Product Image Intelligence Platform",
-    body: `
-      <ul>
-        <li>Multimodal image understanding</li>
-        <li>Automated content generation</li>
-        <li>Marketplace intelligence</li>
-      </ul>`
-  },
-
-  medical: {
-    title: "Medical Document OCR & Summarization",
-    body: `
-      <ul>
-        <li>PaddleOCR multilingual extraction</li>
-        <li>Medical NLP summarization</li>
-      </ul>`
-  },
-
-  vehicle: {
-    title: "Real-Time Vehicle Monitoring System",
-    body: `
-      <ul>
-        <li>YOLO vehicle detection</li>
-        <li>Speed estimation & ANPR</li>
-      </ul>`
-  },
-
-  security: {
-    title: "Automated Security & Person Recognition",
-    body: `
-      <ul>
-        <li>YOLOv8 + DeepSORT tracking</li>
-        <li>Polygonal ROI alerts</li>
-      </ul>`
-  },
-
-  agri: {
-    title: "Agricultural Yield Prediction Tool",
-    body: `
-      <ul>
-        <li>ML-based yield forecasting</li>
-      </ul>`
-  },
-
-  news: {
-    title: "News Text Classification & Summarization",
-    body: `
-      <ul>
-        <li>RoBERTa-based NLP</li>
-        <li>ONNX-optimized inference</li>
-      </ul>`
-  },
-
-  helmet: {
-    title: "🚦 AI-Based Helmet Detection | Computer Vision Demo 🪖",
-    body: `
-      <ul>
-        <li>YOLO + OpenCV based detection</li>
-        <li>Instant no-helmet violation alerts</li>
-        <li>Snapshot capture for enforcement</li>
-        <li>Demo-only (limited training data)</li>
-      </ul>`
-  }
-};
-
-function openModal(key) {
-  modalTitle.innerHTML = projectDetails[key].title;
-  modalBody.innerHTML = projectDetails[key].body;
-  projectModal.style.display = "block";
-}
-
-function closeModal() {
-  projectModal.style.display = "none";
-}
-</script>
-
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('projectModal');
+            if (e.target === modal) closeModal();
+        });
+    </script>
 </body>
 </html>

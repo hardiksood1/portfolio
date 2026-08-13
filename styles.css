@@ -229,6 +229,18 @@ section {
     transform: translateY(-5px);
 }
 
+.placeholder-note {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #f0b429;
+    background: rgba(240, 180, 41, 0.12);
+    border: 1px solid rgba(240, 180, 41, 0.35);
+    border-radius: 8px;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+}
+
 .skill-group {
     padding: 20px;
 }
@@ -252,6 +264,7 @@ section {
 .skill-bar {
     background: linear-gradient(to right, var(--secondary), var(--accent));
     height: 100%;
+    width: 0;
     border-radius: 20px;
     transition: width 1.5s ease-in-out;
 }
@@ -328,8 +341,9 @@ section {
 
 .contact-info {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 15px 40px;
     margin-bottom: 40px;
 }
 
@@ -338,6 +352,11 @@ section {
     align-items: center;
     gap: 10px;
     color: var(--secondary-text);
+    word-break: break-word;
+}
+
+.info-item a {
+    color: var(--secondary);
 }
 
 .contact-form {
@@ -435,6 +454,67 @@ footer {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+/* --- Project modal --- */
+.project-card {
+    cursor: pointer;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    max-width: 800px;
+    margin: 8% auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 40px var(--glow);
+    max-height: 78vh;
+    overflow-y: auto;
+}
+
+.modal-close {
+    float: right;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--secondary);
+}
+
+.modal-content h3 {
+    color: var(--secondary);
+    margin-bottom: 12px;
+    padding-right: 30px;
+}
+
+.modal-content ul {
+    padding-left: 20px;
+    margin: 12px 0;
+}
+
+.modal-content li {
+    margin-bottom: 8px;
+    color: var(--secondary-text);
 }
 
 .animate-in {

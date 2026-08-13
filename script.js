@@ -77,6 +77,17 @@ function toggleMenu() {
 
 function animateOnScroll() {
     const elements = document.querySelectorAll('.animate-in');
+
+    if (!('IntersectionObserver' in window)) {
+        // Fallback: reveal content immediately rather than leaving it invisible.
+        elements.forEach(element => {
+            element.classList.add('visible');
+            const bar = element.querySelector('.skill-bar');
+            if (bar) bar.style.width = bar.dataset.width;
+        });
+        return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -91,6 +102,13 @@ function animateOnScroll() {
     
     elements.forEach(element => {
         observer.observe(element);
+    });
+}
+
+function updateCopyrightYear() {
+    const year = new Date().getFullYear();
+    document.querySelectorAll('footer p').forEach(p => {
+        p.textContent = p.textContent.replace(/©\s*\d{4}/, `© ${year}`);
     });
 }
 
@@ -120,4 +138,5 @@ window.addEventListener('load', () => {
     toggleMenu();
     animateOnScroll();
     initParticles();
+    updateCopyrightYear();
 });
